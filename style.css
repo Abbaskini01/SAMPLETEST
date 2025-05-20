@@ -1,24 +1,22 @@
-header {
-    background-color: #f0f0f0; /* Light grey color */    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: fixed;    width: 100%;
-    top: 0;    z-index: 1000;
-}
+/* Reset and base styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg,#153677,#4e085f);
-    background-color: #4b3db2;
+    background-color: #fefcf8;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    flex-direction: column;
 }
 
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fefcf8;
+/* Header styles */
+header {
+    background-color: #f0f0f0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar {
@@ -29,6 +27,17 @@ body {
   backdrop-filter: blur(5px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 999;
+  transition: all 0.3s ease;
+}
+
+/* Style for navbar when scrolled */
+.navbar.scrolled {
+  background-color: rgba(51, 51, 51, 0.95);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar.scrolled .nav-links a {
+  color: white;
 }
 
 .nav-links {
@@ -56,21 +65,111 @@ body {
 }
 
 .box1 {
-  position: scroll;
-  top: auto;
-  left: auto;
-  background-color: rgba(226, 192, 125, 0.7); /* Transparent grey */
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(226, 192, 125, 0.7);
   backdrop-filter: blur(5px);
   box-shadow: 0 2px 4px rgba(14, 13, 13, 0.1);
   height: 50px;
-  width: 1400px;
+  width: 80%;
+  max-width: 1400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 0 20px;
+  font-weight: bold;
+}
+/* Main content styles */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: rgba(226, 192, 125, 0.2);
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.about, .events, .contact {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.events ul {
+    list-style-type: none;
     padding: 0;
 }
+
+.events li {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.events li:last-child {
+    border-bottom: none;
+}
+
+/* Contact form styles */
+.contact-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #555;
+}
+
 .content {
     padding: 20px;
     text-align: center;
@@ -80,8 +179,7 @@ body {
     color: white;
     padding: 20px 0;
     text-align: left;
-    position: relative;
-    bottom: 0;
+    margin-top: auto;
     width: 100%;
 }
 .footer-content {

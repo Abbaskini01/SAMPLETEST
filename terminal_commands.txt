@@ -1,0 +1,11 @@
+# 1. First, fix the commit command
+git commit -m "Initial commit for College Club website"
+
+# 2. Check which branch you're on
+git branch
+
+# 3. If you don't see any branch or you're on master instead of main, do this:
+git checkout -b main  # This creates and switches to a main branch
+
+# 4. Now try pushing again
+git push -u origin main
